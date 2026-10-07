@@ -1,0 +1,606 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 340" width="100%" height="340">
+  <defs>
+    <!-- Background Seam Base -->
+    <linearGradient id="seamBase" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#07080A"/>
+      <stop offset="50%" stop-color="#0D0F13"/>
+      <stop offset="100%" stop-color="#060709"/>
+    </linearGradient>
+
+    <!-- Ceramic Plate Gradients (Warm Light Bone / Paper) -->
+    <linearGradient id="ceramicLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5F2EC"/>
+      <stop offset="50%" stop-color="#ECE7DD"/>
+      <stop offset="100%" stop-color="#E2DBD0"/>
+    </linearGradient>
+
+    <!-- Dark Architectural Tile Gradient -->
+    <linearGradient id="ceramicDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#181A1F"/>
+      <stop offset="50%" stop-color="#121317"/>
+      <stop offset="100%" stop-color="#0D0E11"/>
+    </linearGradient>
+
+    <linearGradient id="glassTileGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#15171F"/>
+      <stop offset="60%" stop-color="#101217"/>
+      <stop offset="100%" stop-color="#0A0B0E"/>
+    </linearGradient>
+
+    <!-- Teal Accents -->
+    <linearGradient id="tealGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0D9488"/>
+      <stop offset="50%" stop-color="#14B8A6"/>
+      <stop offset="100%" stop-color="#2DD4BF"/>
+    </linearGradient>
+
+    <!-- ==================== TILE 1 TOP-LEFT MESH GRADIENT ==================== -->
+    <radialGradient id="tile1CornerMesh" cx="20%" cy="20%" r="65%">
+      <stop offset="0%" stop-color="#14B8A6" stop-opacity="0.42"/>
+      <stop offset="35%" stop-color="#2DD4BF" stop-opacity="0.25"/>
+      <stop offset="70%" stop-color="#E6DFD1" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#ECE7DD" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="tile1WarmMesh" cx="50%" cy="30%" r="55%">
+      <stop offset="0%" stop-color="#EFE9DD" stop-opacity="0.5"/>
+      <stop offset="50%" stop-color="#0D9488" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#ECE7DD" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Global Background Ambient Mesh Gradient Lights -->
+    <radialGradient id="meshTeal" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#14B8A6" stop-opacity="0.36"/>
+      <stop offset="50%" stop-color="#0D9488" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#0D9488" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="meshCream" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F2EBDA" stop-opacity="0.28"/>
+      <stop offset="60%" stop-color="#D4CABA" stop-opacity="0.09"/>
+      <stop offset="100%" stop-color="#D4CABA" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="meshBlue" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0284C7" stop-opacity="0.28"/>
+      <stop offset="60%" stop-color="#0369A1" stop-opacity="0.09"/>
+      <stop offset="100%" stop-color="#0369A1" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Studio Flare for Tile 2 -->
+    <radialGradient id="flareCenter" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="25%" stop-color="#ECE5D8" stop-opacity="0.65"/>
+      <stop offset="55%" stop-color="#14B8A6" stop-opacity="0.24"/>
+      <stop offset="100%" stop-color="#101217" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="beamH" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="beamV" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Blur Filters -->
+    <filter id="meshBlurGlobal" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="55" result="blur"/>
+    </filter>
+
+    <filter id="cornerMeshBlur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="28" result="blur"/>
+    </filter>
+
+    <!-- Tile Shadows -->
+    <filter id="tileShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+
+    <!-- ==================== CLIP PATHS FOR TILES ==================== -->
+    <clipPath id="tile1Clip">
+      <path d="M 32 14
+               L 435 14
+               C 458 14, 468 28, 460 48
+               L 425 125
+               C 415 148, 395 168, 370 168
+               L 32 168
+               C 18 168, 12 156, 12 142
+               L 12 40
+               C 12 24, 20 14, 32 14 Z"/>
+    </clipPath>
+
+    <clipPath id="tile2Clip">
+      <path d="M 470 14
+               L 888 14
+               C 902 14, 910 24, 910 38
+               L 910 162
+               C 910 174, 900 182, 886 182
+               L 475 182
+               C 450 182, 442 165, 452 142
+               L 485 58
+               C 492 40, 484 18, 470 14 Z"/>
+    </clipPath>
+
+    <clipPath id="tile3Clip">
+      <path d="M 12 182
+               L 430 182
+               C 452 182, 460 196, 452 216
+               L 418 298
+               C 408 318, 392 328, 370 328
+               L 32 328
+               C 18 328, 12 318, 12 302 Z"/>
+    </clipPath>
+
+    <!-- Background Kinetic Defs: Hairline Grid, Aurora Beam & Seam Lasers -->
+    <pattern id="bgGridPattern" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#2DD4BF" stroke-opacity="0.04" stroke-width="0.75"/>
+    </pattern>
+
+    <linearGradient id="auroraBeam" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14B8A6" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#2DD4BF" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#0D9488" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="seamLaserH" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#14B8A6" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#2DD4BF" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#14B8A6" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="seamLaserV" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#14B8A6" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#2DD4BF" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#14B8A6" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    <![CDATA[
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&display=swap');
+
+    /* Motion Elements and Keyframes */
+    @keyframes cornerMeshPulse {
+      0%, 100% { transform: scale(1) translate(0, 0); opacity: 0.85; }
+      50% { transform: scale(1.18) translate(18px, 10px); opacity: 1; }
+    }
+    @keyframes meshFloatA {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(65px, -22px) scale(1.22); }
+    }
+    @keyframes meshFloatB {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(-55px, 32px) scale(1.18); }
+    }
+    @keyframes meshFloatC {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(35px, 45px) scale(0.92); }
+    }
+
+    /* Background Kinetic Layer: Grid Drift, Aurora Sweep, Seam Beams, Particles */
+    @keyframes gridDrift {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(64px); }
+    }
+    @keyframes auroraSweep {
+      0% { transform: translateX(-430px); opacity: 0; }
+      22% { opacity: 0.7; }
+      78% { opacity: 0.7; }
+      100% { transform: translateX(1340px); opacity: 0; }
+    }
+    @keyframes seamSweepH {
+      0% { transform: translateX(-370px); opacity: 0; }
+      20% { opacity: 0.9; }
+      80% { opacity: 0.9; }
+      100% { transform: translateX(940px); opacity: 0; }
+    }
+    @keyframes seamSweepV {
+      0% { transform: translateY(-370px); opacity: 0; }
+      20% { opacity: 0.85; }
+      80% { opacity: 0.85; }
+      100% { transform: translateY(370px); opacity: 0; }
+    }
+    @keyframes glowWander {
+      0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.55; }
+      33% { transform: translate(42px, -30px) scale(1.14); opacity: 0.9; }
+      66% { transform: translate(-36px, 26px) scale(0.93); opacity: 0.7; }
+    }
+    @keyframes particleFloatA {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.2; }
+      50% { transform: translate(16px, -28px) rotate(45deg); opacity: 0.75; }
+    }
+    @keyframes particleFloatB {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.14; }
+      50% { transform: translate(-24px, 22px) rotate(-35deg); opacity: 0.6; }
+    }
+
+    /* Studio Flare Breathing and Rotation */
+    @keyframes flareBreath {
+      0%, 100% { opacity: 0.8; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.08); }
+    }
+    @keyframes flareSpinSlow {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Watermark In-Place Subtle Breathing and Opacity (Low Opacity ~0.08) */
+    @keyframes xBreathe {
+      0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.07; }
+      50% { transform: scale(1.04) rotate(1deg); opacity: 0.095; }
+    }
+    @keyframes globeBreathe {
+      0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.07; }
+      50% { transform: scale(1.04) rotate(2deg); opacity: 0.095; }
+    }
+
+    /* Scanner Shimmer Line in Tile 1 */
+    @keyframes subtleScan {
+      0% { transform: translateY(-20px); opacity: 0; }
+      20% { opacity: 0.45; }
+      80% { opacity: 0.45; }
+      100% { transform: translateY(160px); opacity: 0; }
+    }
+
+    .corner-mesh-anim { animation: cornerMeshPulse 10s ease-in-out infinite; transform-origin: 50px 30px; }
+    .mesh-blob-1 { animation: meshFloatA 15s ease-in-out infinite; transform-origin: 260px 100px; }
+    .mesh-blob-2 { animation: meshFloatB 19s ease-in-out infinite; transform-origin: 700px 180px; }
+    .mesh-blob-3 { animation: meshFloatC 17s ease-in-out infinite; transform-origin: 480px 260px; }
+
+    .flare-anim { animation: flareBreath 7s ease-in-out infinite; transform-origin: 685px 98px; }
+    .flare-spin { animation: flareSpinSlow 45s linear infinite; transform-origin: 685px 98px; }
+
+    .x-watermark-anim { animation: xBreathe 10s ease-in-out infinite; transform-origin: 0px 0px; }
+    .globe-watermark-anim { animation: globeBreathe 12s ease-in-out infinite; transform-origin: 0px 0px; }
+    .scan-beam { animation: subtleScan 8s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+
+    /* Interactive Hover Transitions on Clickable Tiles */
+    .clickable-tile {
+      cursor: pointer;
+      transition: filter 0.3s ease;
+    }
+    .clickable-tile:hover {
+      filter: brightness(1.08);
+    }
+    .clickable-tile:hover .hover-arrow {
+      transform: translate(3px, -3px);
+    }
+    .hover-arrow {
+      transition: transform 0.25s ease;
+      display: inline-block;
+    }
+
+    .static-tile {
+      transition: filter 0.3s ease;
+    }
+    .static-tile:hover {
+      filter: brightness(1.02);
+    }
+
+    .font-poppins {
+      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    .font-mono {
+      font-family: 'SF Mono', 'JetBrains Mono', 'Fira Code', Menlo, Consolas, monospace;
+    }
+
+    /* Kinetic Background Layer Classes */
+    .bg-grid-drift { animation: gridDrift 24s linear infinite; }
+    .aurora-beam-sweep { animation: auroraSweep 13s ease-in-out infinite; }
+    .seam-laser-h { animation: seamSweepH 8s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+    .seam-laser-v { animation: seamSweepV 10s cubic-bezier(0.4, 0, 0.6, 1) infinite 2s; }
+    .wander-blob-1 { animation: glowWander 16s ease-in-out infinite; transform-origin: 350px 170px; }
+    .wander-blob-2 { animation: glowWander 22s ease-in-out infinite reverse; transform-origin: 600px 200px; }
+    .float-particle-1 { animation: particleFloatA 7s ease-in-out infinite; }
+    .float-particle-2 { animation: particleFloatB 9s ease-in-out infinite 1.5s; }
+    .float-particle-3 { animation: particleFloatA 8.5s ease-in-out infinite 3s; }
+    .float-particle-4 { animation: particleFloatB 10s ease-in-out infinite 2s; }
+    ]]>
+  </style>
+
+  <!-- Deep Ground Negative Space Canvas -->
+  <rect width="920" height="340" rx="16" fill="url(#seamBase)"/>
+
+  <!-- KINETIC LAYER 1: Drifting Hairline Technical Grid -->
+  <g opacity="0.85" class="bg-grid-drift">
+    <rect x="-64" y="0" width="1048" height="340" fill="url(#bgGridPattern)"/>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- KINETIC LAYER 2: ANIMATED LOW-OPACITY MESH GRADIENT (6 DRIFTING LIGHTS)   -->
+  <!-- ========================================================================= -->
+  <g filter="url(#meshBlurGlobal)" opacity="0.95">
+    <circle cx="200" cy="90" r="190" fill="url(#meshTeal)" class="mesh-blob-1"/>
+    <circle cx="700" cy="150" r="220" fill="url(#meshCream)" class="mesh-blob-2"/>
+    <circle cx="460" cy="260" r="180" fill="url(#meshBlue)" class="mesh-blob-3"/>
+    <circle cx="820" cy="270" r="150" fill="url(#meshTeal)" class="mesh-blob-1"/>
+    <!-- Wandering Ambient Glow Centers -->
+    <circle cx="360" cy="170" r="140" fill="url(#meshTeal)" class="wander-blob-1"/>
+    <circle cx="580" cy="210" r="160" fill="url(#meshCream)" class="wander-blob-2"/>
+  </g>
+
+  <!-- KINETIC LAYER 3: Sweeping Aurora Beam across the background -->
+  <g opacity="0.6">
+    <rect x="-400" y="0" width="320" height="340" fill="url(#auroraBeam)" class="aurora-beam-sweep" transform="skewX(-24)"/>
+  </g>
+
+  <!-- KINETIC LAYER 4: Seam Light Lasers travelling through plate gaps -->
+  <g opacity="0.85">
+    <!-- Horizontal Seam Glow traveling between top and bottom plates -->
+    <line x1="-300" y1="175" x2="0" y2="175" stroke="url(#seamLaserH)" stroke-width="2.2" class="seam-laser-h"/>
+    <!-- Vertical Seam Glow traveling between left and right plates -->
+    <line x1="452" y1="-300" x2="452" y2="0" stroke="url(#seamLaserV)" stroke-width="2.2" class="seam-laser-v"/>
+  </g>
+
+  <!-- KINETIC LAYER 5: Floating Micro-Particles in Negative Space Seams -->
+  <g fill="#2DD4BF" font-family="'Poppins', sans-serif" font-size="9" stroke="none">
+    <!-- Floating registration pluses & diamonds in the seam junctions -->
+    <g transform="translate(448, 172)" class="float-particle-1">
+      <text x="0" y="0" text-anchor="middle" fill="#2DD4BF" opacity="0.75">+</text>
+    </g>
+    <g transform="translate(460, 48)" class="float-particle-2">
+      <circle cx="0" cy="0" r="1.5" fill="#2DD4BF" opacity="0.6"/>
+    </g>
+    <g transform="translate(440, 290)" class="float-particle-3">
+      <text x="0" y="0" text-anchor="middle" fill="#14B8A6" opacity="0.65">+</text>
+    </g>
+    <g transform="translate(680, 180)" class="float-particle-4">
+      <circle cx="0" cy="0" r="1.5" fill="#EAE3D2" opacity="0.55"/>
+    </g>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- TILE 1 (TOP-LEFT): NIKAN WYSTAF (LOGO REMOVED, CORNER MESH + SCAN MOTION)  -->
+  <!-- ========================================================================= -->
+  <g class="static-tile">
+    <!-- Base Ceramic Plate -->
+    <path d="M 32 14
+             L 435 14
+             C 458 14, 468 28, 460 48
+             L 425 125
+             C 415 148, 395 168, 370 168
+             L 32 168
+             C 18 168, 12 156, 12 142
+             L 12 40
+             C 12 24, 20 14, 32 14 Z"
+          fill="url(#ceramicLight)" stroke="#DFD8CB" stroke-width="0.8" filter="url(#tileShadow)"/>
+
+    <!-- VISIBLE ANIMATED MESH GRADIENT IN TOP-LEFT CORNER (CLIPPED TO TILE 1) -->
+    <g clip-path="url(#tile1Clip)">
+      <g filter="url(#cornerMeshBlur)" class="corner-mesh-anim">
+        <!-- Glowing Teal Corner Orb blooming from top-left -->
+        <circle cx="40" cy="25" r="150" fill="url(#tile1CornerMesh)"/>
+        <!-- Soft Warm Mint/Cream Accent Orb -->
+        <ellipse cx="140" cy="50" rx="120" ry="75" fill="url(#tile1WarmMesh)"/>
+      </g>
+      <!-- Moving Subtle Scanner Ray Line -->
+      <line x1="12" y1="0" x2="440" y2="0" stroke="rgba(20, 184, 166, 0.4)" stroke-width="1.2" class="scan-beam"/>
+    </g>
+
+    <!-- Left Plus Marks Column (+ + + + +) -->
+    <g transform="translate(36, 40)" fill="#787774" font-family="'Poppins', sans-serif" font-size="12" font-weight="400">
+      <text x="0" y="0">+</text>
+      <text x="0" y="22">+</text>
+      <text x="0" y="44">+</text>
+      <text x="0" y="66">+</text>
+      <text x="0" y="88">+</text>
+    </g>
+
+    <!-- Clean, Bold Name Typography: NIKAN WYSTAF (80% Opacity Soft Charcoal) -->
+    <g transform="translate(76, 68)" class="font-poppins" opacity="0.80">
+      <text x="0" y="0" fill="#181A1F" font-size="30" font-weight="750" letter-spacing="-0.03em">NIKAN</text>
+      <text x="0" y="34" fill="#181A1F" font-size="30" font-weight="750" letter-spacing="-0.03em">WYSTAF</text>
+      <!-- Clean Minimal Teal Registration Accent Line -->
+      <line x1="0" y1="46" x2="110" y2="46" stroke="#0D9488" stroke-width="3" stroke-linecap="round"/>
+    </g>
+
+    <!-- Top Indicator Dots (Static, Crisp) -->
+    <g transform="translate(400, 32)">
+      <circle cx="0" cy="0" r="3" fill="#181A1F"/>
+      <circle cx="10" cy="0" r="3" fill="none" stroke="#181A1F" stroke-width="1"/>
+      <circle cx="20" cy="0" r="3" fill="#0D9488"/>
+    </g>
+
+    <!-- Bottom Technical Grid Metadata -->
+    <g transform="translate(36, 152)" class="font-mono" font-size="8.5" fill="#71706D">
+      <text x="0" y="0">
+        <tspan font-weight="700" fill="#181A1F">NW :</tspan> Grid system 920 × 340 mm
+      </text>
+      <text x="180" y="0">
+        <tspan font-weight="700" fill="#181A1F">FOLIO :</tspan> Vol. 01 / 2026
+      </text>
+    </g>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- TILE 2 (TOP-RIGHT): CLICKABLE WEBSITE + BIG WEBSITE/GLOBE LOGO WATERMARK  -->
+  <!-- ========================================================================= -->
+  <a href="https://www.wystaf.me" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+    <g class="clickable-tile">
+      <!-- Plate Boundary -->
+      <path d="M 470 14
+               L 888 14
+               C 902 14, 910 24, 910 38
+               L 910 162
+               C 910 174, 900 182, 886 182
+               L 475 182
+               C 450 182, 442 165, 452 142
+               L 485 58
+               C 492 40, 484 18, 470 14 Z"
+            fill="url(#glassTileGrad)" stroke="rgba(255,255,255,0.09)" stroke-width="0.8" filter="url(#tileShadow)"/>
+
+      <!-- BIG VISIBLE WEBSITE / GLOBE LOGO WATERMARK (MATCHING THICK STROKE WEIGHT) -->
+      <g clip-path="url(#tile2Clip)">
+        <g transform="translate(710, 100)">
+          <g class="globe-watermark-anim">
+            <!-- Globe Wireframe - 200px Wide, matching thick stroke weight with X logo -->
+            <circle cx="0" cy="0" r="100" fill="none" stroke="#FFFFFF" stroke-width="11"/>
+            <ellipse cx="0" cy="0" rx="46" ry="100" fill="none" stroke="#FFFFFF" stroke-width="10"/>
+            <line x1="0" y1="-100" x2="0" y2="100" stroke="#FFFFFF" stroke-width="10"/>
+            <line x1="-100" y1="0" x2="100" y2="0" stroke="#FFFFFF" stroke-width="10"/>
+            <path d="M -87 -48 Q 0 -34 87 -48" fill="none" stroke="#FFFFFF" stroke-width="8.5"/>
+            <path d="M -87 48 Q 0 34 87 48" fill="none" stroke="#FFFFFF" stroke-width="8.5"/>
+          </g>
+        </g>
+      </g>
+
+      <!-- Inner Studio Cross-Flare Light Beam (Breathing + Slow Rotation Motion) -->
+      <g transform="translate(685, 98)" class="flare-anim">
+        <circle cx="0" cy="0" r="88" fill="url(#flareCenter)"/>
+        <g class="flare-spin">
+          <ellipse cx="0" cy="0" rx="140" ry="7" fill="url(#beamH)" opacity="0.8"/>
+          <ellipse cx="0" cy="0" rx="7" ry="75" fill="url(#beamV)" opacity="0.8"/>
+        </g>
+        <circle cx="0" cy="0" r="3.5" fill="#FFFFFF"/>
+        <circle cx="0" cy="0" r="1.5" fill="#2DD4BF"/>
+      </g>
+
+      <!-- Prominent Clickable Website Typography -->
+      <g transform="translate(506, 54)" class="font-poppins">
+        <text x="0" y="0" fill="#888B94" font-size="10" font-weight="600" letter-spacing="0.14em">OFFICIAL PORTFOLIO</text>
+        <g transform="translate(0, 32)">
+          <text x="0" y="0" fill="#FFFFFF" font-size="22" font-weight="700" letter-spacing="-0.02em">
+            wystaf.me <tspan fill="#2DD4BF" class="hover-arrow">↗</tspan>
+          </text>
+        </g>
+        <text x="0" y="52" fill="#585B64" class="font-mono" font-size="9">CLICK TO VISIT WEBSITE</text>
+      </g>
+
+      <!-- Top-Right Registration Crosshair -->
+      <g transform="translate(864, 36)" stroke="rgba(255,255,255,0.4)" stroke-width="0.8">
+        <line x1="-8" y1="0" x2="8" y2="0"/>
+        <line x1="0" y1="-8" x2="0" y2="8"/>
+      </g>
+      <text x="825" y="166" fill="rgba(255,255,255,0.3)" class="font-mono" font-size="8">PORTAL // 01</text>
+    </g>
+  </a>
+
+  <!-- ========================================================================= -->
+  <!-- TILE 3 (BOTTOM-LEFT): CLICKABLE X WITH ENLARGED ULTRA-LOW OPACITY LOGO   -->
+  <!-- ========================================================================= -->
+  <a href="https://x.com/WYSTAF" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
+    <g class="clickable-tile">
+      <!-- Plate Boundary -->
+      <path d="M 12 182
+               L 430 182
+               C 452 182, 460 196, 452 216
+               L 418 298
+               C 408 318, 392 328, 370 328
+               L 32 328
+               C 18 328, 12 318, 12 302 Z"
+            fill="url(#ceramicDark)" stroke="rgba(255,255,255,0.07)" stroke-width="0.8" filter="url(#tileShadow)"/>
+
+      <!-- BIG VISIBLE X LOGO WATERMARK (228PX WIDE, VERY BIG SCALE 9.5) -->
+      <g clip-path="url(#tile3Clip)">
+        <g transform="translate(265, 255)">
+          <g class="x-watermark-anim" fill="#FFFFFF">
+            <!-- Official X Logo scaled to 228x228px and centered at (0, 0) -->
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                  transform="translate(-114, -114) scale(9.5)"/>
+          </g>
+        </g>
+      </g>
+
+      <!-- Foreground X Information & Link -->
+      <g transform="translate(36, 222)" class="font-poppins">
+        <text x="0" y="0" fill="#717582" font-size="10" font-weight="600" letter-spacing="0.14em">SOCIAL DISPATCH</text>
+        <g transform="translate(0, 32)">
+          <text x="0" y="0" fill="#FFFFFF" font-size="21" font-weight="700" letter-spacing="-0.01em">
+            @WYSTAF <tspan fill="#2DD4BF" class="hover-arrow">↗</tspan>
+          </text>
+        </g>
+        <text x="0" y="52" fill="#585B66" class="font-mono" font-size="9">x.com / wystaf</text>
+      </g>
+
+      <g transform="translate(36, 312)" class="font-mono" font-size="8.5" fill="#4B4E56">
+        <text x="0" y="0">STATUS : ACTIVE FEED</text>
+      </g>
+    </g>
+  </a>
+
+  <!-- ========================================================================= -->
+  <!-- TILE 4 (BOTTOM-RIGHT): DISCIPLINE & NEW DESCRIPTION CHIPS                -->
+  <!-- ========================================================================= -->
+  <g class="static-tile">
+    <!-- Plate Boundary -->
+    <path d="M 466 194
+             L 888 194
+             C 904 194, 910 204, 910 218
+             L 910 304
+             C 910 318, 902 328, 886 328
+             L 460 328
+             C 438 328, 430 314, 438 294
+             L 468 222
+             C 474 206, 468 196, 466 194 Z"
+          fill="url(#ceramicLight)" stroke="#DFD8CB" stroke-width="0.8" filter="url(#tileShadow)"/>
+
+    <!-- Content Stack -->
+    <g transform="translate(488, 226)" class="font-poppins">
+      <!-- Title -->
+      <text x="0" y="0" fill="#181A1F" font-size="12" font-weight="700" letter-spacing="-0.01em">
+        Multidisciplinary Graphic Designer × Creative Technologist
+      </text>
+
+      <!-- Requested Description: Design, Programming, AI, Computer Hardware -->
+      <text x="0" y="18" fill="#5A5854" font-size="10" font-weight="500">
+        Design <tspan fill="#0D9488">•</tspan> Programming <tspan fill="#0D9488">•</tspan> AI <tspan fill="#0D9488">•</tspan> Computer Hardware
+      </text>
+
+      <!-- 4 Requested Focus Chips -->
+      <g transform="translate(0, 36)">
+        <!-- Chip 1: Design -->
+        <g transform="translate(0, 0)">
+          <rect width="64" height="20" rx="5" fill="rgba(13, 148, 136, 0.14)" stroke="rgba(13, 148, 136, 0.3)" stroke-width="0.8"/>
+          <text x="32" y="13.5" text-anchor="middle" fill="#0D9488" font-size="9.5" font-weight="600">Design</text>
+        </g>
+
+        <!-- Chip 2: Programming -->
+        <g transform="translate(70, 0)">
+          <rect width="94" height="20" rx="5" fill="rgba(15, 76, 73, 0.08)" stroke="rgba(15, 76, 73, 0.2)" stroke-width="0.8"/>
+          <text x="47" y="13.5" text-anchor="middle" fill="#0F4C49" font-size="9.5" font-weight="600">Programming</text>
+        </g>
+
+        <!-- Chip 3: AI -->
+        <g transform="translate(170, 0)">
+          <rect width="48" height="20" rx="5" fill="rgba(13, 148, 136, 0.14)" stroke="rgba(13, 148, 136, 0.3)" stroke-width="0.8"/>
+          <text x="24" y="13.5" text-anchor="middle" fill="#0D9488" font-size="9.5" font-weight="600">AI</text>
+        </g>
+
+        <!-- Chip 4: Computer Hardware -->
+        <g transform="translate(224, 0)">
+          <rect width="138" height="20" rx="5" fill="rgba(15, 76, 73, 0.08)" stroke="rgba(15, 76, 73, 0.2)" stroke-width="0.8"/>
+          <text x="69" y="13.5" text-anchor="middle" fill="#0F4C49" font-size="9.5" font-weight="600">Computer Hardware</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Right Edge Plus Marks Column (+ + + + +) -->
+    <g transform="translate(880, 220)" fill="#787774" font-family="'Poppins', sans-serif" font-size="12" font-weight="400">
+      <text x="0" y="0">+</text>
+      <text x="0" y="20">+</text>
+      <text x="0" y="40">+</text>
+      <text x="0" y="60">+</text>
+      <text x="0" y="80">+</text>
+    </g>
+
+    <!-- Static Bottom Indicator Dots (Clean, crisp) -->
+    <g transform="translate(488, 314)">
+      <circle cx="0" cy="0" r="3" fill="#181A1F"/>
+      <circle cx="10" cy="0" r="3" fill="none" stroke="#181A1F" stroke-width="1"/>
+      <circle cx="20" cy="0" r="3" fill="#0D9488"/>
+    </g>
+
+    <!-- Bottom Technical Metadata (DIMENSIONS REMOVED AS REQUESTED!) -->
+    <g transform="translate(780, 314)" class="font-mono" font-size="9" fill="#71706D">
+      <text x="0" y="0" font-weight="700" fill="#0D9488">
+        WYSTAF.ME ↗
+      </text>
+    </g>
+  </g>
+
+</svg>
